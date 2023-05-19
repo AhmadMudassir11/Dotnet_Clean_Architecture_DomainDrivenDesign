@@ -46,6 +46,7 @@ To get started with the Dinner Reservation System project, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/AhmadMudassir11/dotnet_clean_architecture_DomainDrivenDesign.git`
 2. Set up the database and run the necessary migrations.
+(migration is created in the Infrastructure layer. run the db command dotnet ef database update -p ./BuberDinner.Infrastructure -s ./BuberDinner.Api)
 3. Configure the Mapster object mappings and dependency injection bindings.
 4. Build and run the project.
 5. Access the API endpoints or user interfaces to interact with the dinner reservation system.
