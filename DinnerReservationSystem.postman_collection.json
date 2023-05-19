@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "bad921a6-096a-416f-b7f3-a897468d4307",
+		"name": "BuberDinner",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24597378"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "RegisterRequest",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"Ahmad\",\r\n    \"lastName\":\"Uchiha\",\r\n    \"Email\":\"ahmad@gmail.com\",\r\n    \"password\":\"pass123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5092/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5092",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LoginRequest",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiOTg5YWQzNS0zMmQ3LTQ1MzMtYjQyYy04OTA3ZTVkMmM4MGQiLCJnaXZlbl9uYW1lIjoiQWhtYWQiLCJmYW1pbHlfbmFtZSI6IlVjaGloYSIsImp0aSI6IjRjYzE1NDYwLTMzOWItNDZhNi05N2FiLTNlMzlkNDI1YjQwNSIsImV4cCI6MTY4NDQ3ODQxNywiaXNzIjoiQnViZXJEaW5uZXIiLCJhdWQiOiJCdWJlckRpbm5lciJ9.7oz4XNwXserrjtVi65leHLpPztJetpYWJEprDScC-V8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"ahmad@gmail.com\",\r\n    \"password\":\"pass123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5092/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5092",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Dinners",
+			"item": [
+				{
+					"name": "GetDinners",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiOTg5YWQzNS0zMmQ3LTQ1MzMtYjQyYy04OTA3ZTVkMmM4MGQiLCJnaXZlbl9uYW1lIjoiQWhtYWQiLCJmYW1pbHlfbmFtZSI6IlVjaGloYSIsImp0aSI6IjRjYzE1NDYwLTMzOWItNDZhNi05N2FiLTNlMzlkNDI1YjQwNSIsImV4cCI6MTY4NDQ3ODQxNywiaXNzIjoiQnViZXJEaW5uZXIiLCJhdWQiOiJCdWJlckRpbm5lciJ9.7oz4XNwXserrjtVi65leHLpPztJetpYWJEprDScC-V8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5092/Dinners",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5092",
+							"path": [
+								"Dinners"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Menus",
+			"item": [
+				{
+					"name": "CreateMenu",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMGZhNTZjYy01M2FiLTQ5MzUtYTcxMy02ZDFhYTRhMGQ1NjMiLCJnaXZlbl9uYW1lIjoiQWhtYWQiLCJmYW1pbHlfbmFtZSI6IlVjaGloYSIsImp0aSI6ImE3MmMxNjA1LWMyMjAtNDI2Yy05ZWVmLTczZDZiZmM0YmU5OCIsImV4cCI6MTY4NDQ4NjIyOSwiaXNzIjoiQnViZXJEaW5uZXIiLCJhdWQiOiJCdWJlckRpbm5lciJ9.1Cj2Wdj9eBkfbuPhqZ9zWef44Lapd95mSCjM6St_vvA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Yummy Menu\",\r\n    \"description\": \"A menu with yummy food\",\r\n    \"sections\": [\r\n        {\r\n            \"name\": \"Appetizers\",\r\n            \"description\": \"Starters\",\r\n            \"items\": [\r\n                {\r\n                    \"name\": \"Fried pickles\",\r\n                    \"description\": \"Deep fried pickles\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5092/hosts/8896871dbaef43b3bfcbd7e9ddc6fe47/menus",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5092",
+							"path": [
+								"hosts",
+								"8896871dbaef43b3bfcbd7e9ddc6fe47",
+								"menus"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
